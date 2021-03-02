@@ -18,6 +18,7 @@ const timer = {
   isActive: false,
   intervalId: null,
   start() {
+    startBtn.disabled = true;
     if (this.isActive) {
       return;
     }
@@ -32,6 +33,7 @@ const timer = {
   },
 
   stop() {
+    startBtn.disabled = false;
     clearInterval(this.intervalId);
     this.intervalId = null;
     this.isActive = false;
